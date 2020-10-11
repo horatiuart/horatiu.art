@@ -1,5 +1,5 @@
 ---
-title: poezii
+title: poezii - Horaţiu Tănescu
 layout: layouts/base
 ---
 
