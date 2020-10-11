@@ -1,17 +1,31 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ renderData.description or description or metadata.description }}">
-    <title>{{ renderData.title or title or metadata.title }}</title>
-    <link rel="stylesheet" href="/styles/main.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ renderData.description or description or metadata.description }}">
+  <title>{{ renderData.title or title or metadata.title }}</title>
+  <link rel="stylesheet" href="/styles/main.css">
+
+  {% if eleventy.isProduction -%}
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180222102-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-180222102-1');
+  </script>
+
+  {%- endif %}
 </head>
 <body>
-    <header>
-        <p>Horaţiu Tănescu</p>
-    </header>
+  <header>
+    <p>Horaţiu Tănescu</p>
+  </header>
 
-    {{ content | safe }}
+  {{ content | safe }}
 </body>
 </html>

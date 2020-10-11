@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx eleventy --serve --watch",
-    "build": "npx eleventy"
+    "start": "cross-env ELEVENTY_ENV=development npx @11ty/eleventy --serve --watch",
+    "build": "cross-env ELEVENTY_ENV=production npx @11ty/eleventy"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0"
+    "@11ty/eleventy": "^0.11.0",
+    "cross-env": "^7.0.2"
   }
 }
